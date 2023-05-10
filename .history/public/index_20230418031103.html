@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>Gerenciador de Objetos em Tempo Real com WebSockets e Node.js</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+  </head>
+  <body>
+    <h1>Objetos:</h1>
+    <form>
+      <label for="nome">Nome:</label>
+      <input type="text" name="nome" id="nome">
+      <button type="button" id="criar">Criar</button>
+    </form>
+    <div id="objects-container"></div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/client.js"></script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+.object {
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+  }
+  .object.active {
+    background-color: green;
+  }
+  .object.inactive {
+    background-color: red;
+  }
+  
+  h1 {
+    color: blue;
+  }
+  
