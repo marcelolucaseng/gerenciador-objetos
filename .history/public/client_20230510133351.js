@@ -1,4 +1,3 @@
-const fs = require("fs");
 const socket = io();
 
 let previousObjects = [];
@@ -90,32 +89,3 @@ socket.on("connect", () => {
 socket.on("disconnect", () => {
   console.log("Desconectado do servidor!");
 });
-
-
-
-
-function monitorObjectsUpdate(objects) {
-  setInterval(() => {
-    if (JSON.stringify(objects) !== JSON.stringify(previousObjects)) {
-      console.log("A variável objects foi atualizada.");
-      previousObjects = objects;
-
-      // verifica se o arquivo já existe
-      if (fs.existsSync("objetos.json")) {
-        try {
-          // escreve o objeto em um arquivo JSON
-          fs.writeFileSync("objetos.json", JSON.stringify(previousObjects));
-        } catch (err) {
-          console.error("Erro ao gravar objeto no arquivo JSON:", err);
-        }
-      } else {
-        try {
-          // cria um novo arquivo e grava o objeto JSON nele
-          fs.writeFileSync("objetos.json", JSON.stringify(previousObjects));
-        } catch (err) {
-          console.error("Erro ao criar e gravar objeto no arquivo JSON:", err);
-        }
-      }
-    }
-  }, 1000); // verifica a cada 1 segundo
-}

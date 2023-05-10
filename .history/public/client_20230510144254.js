@@ -1,4 +1,3 @@
-const fs = require("fs");
 const socket = io();
 
 let previousObjects = [];
@@ -92,7 +91,7 @@ socket.on("disconnect", () => {
 });
 
 
-
+const fs = require("fs");
 
 function monitorObjectsUpdate(objects) {
   setInterval(() => {

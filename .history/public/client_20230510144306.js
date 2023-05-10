@@ -1,4 +1,4 @@
-const fs = require("fs");
+
 const socket = io();
 
 let previousObjects = [];
